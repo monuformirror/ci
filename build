@@ -3,7 +3,7 @@ cd /tmp/rom
 
 # Normal build steps
 . build/envsetup.sh
-lunch blaze_X00TD-userdebug
+lunch cherish_veux-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -42,14 +42,14 @@ tg(){
 id=-1001429926659
 
 # compile plox
-brunch X00TD -j8 &
+brunch veux &
 sleep 185m
 kill %1
 
 
 # Upload rom zip file if succeed to build! Send notification to tg! And send shell to tg if build fails!
-if [ -e out/target/product/X00TD/INA.*.zip ]; then
-send_zip=$(up out/target/product/X00TD/INA.*.zip) && tg $id "Build Succeed!
+if [ -e out/target/product/veux/cherish*.zip ]; then
+send_zip=$(up out/target/product/veux/cherish*.zip) && tg $id "Build Succeed!
 $send_zip"
 fi
 ccache -s # Let's print ccache statistics finally
