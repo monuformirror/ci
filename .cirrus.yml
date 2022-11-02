@@ -6,9 +6,9 @@ task:
     name: Monu
     timeout_in: 120m
     container:
-      image: aarunalr/aosp-build
-      cpu: 8
-      memory: 32g
+      image: ghcr.io/sushrut1101/docker:arch
+      cpu: 4
+      memory: 16g
       commands:
       - sudo apt-get install gpg
       - sudo apt-get update
